@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+main{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.imagem-background {
+  position: relative;
+  height: 100dvh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 75%;
+  transition: background-image 1s linear;
+}
+
+
+
+.seja-bem-vindo-card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.seja-bem-vindo{
+  font-family: space-mono;
+    color: darkblue;
+    font-size: 30px;
+}

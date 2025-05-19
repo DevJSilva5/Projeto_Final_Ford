@@ -1,0 +1,49 @@
+main {
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+main::before {
+  content: '';
+  flex: 1;
+  background: url('../../../../public/img/fordrangerb.png') no-repeat center center;
+  background-size: cover;
+  opacity: 0.35;
+
+}
+
+.form-login {
+  flex: 1;
+  max-width: 700px;
+  width: 100%;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:300px ;
+}
+
+.form-logo {
+  align-items: center;
+  width: 250px;
+  height: auto;
+  margin-bottom: 3rem;
+  margin: 170px;
+}
+
+.form-title {
+  font-family: space-mono;
+  font-size: 2rem;
+  color: #2a2a2a;
+  font-weight: 600;
+  text-align: center;
+}
+
+app-form {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+}

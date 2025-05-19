@@ -1,0 +1,14 @@
+<main>
+  <section class="form-login">
+    <div class="welcome">
+      <img class="form-logo" src="./img/ford.png" alt="form-logo" tabindex="-1">
+      <h1 class="form-title">Boas-vindas</h1>
+    </div>
+    <div>
+      <app-form
+        (credentialEmitter)="login($event)"
+        (autoLoginToggleEmitter)="changeAutoLogin($event)">
+      </app-form>
+    </div>
+  </section>
+</main>

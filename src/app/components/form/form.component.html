@@ -1,0 +1,75 @@
+<form [formGroup]="loginForm" (ngSubmit)="emitValues()" method="post">
+    <div class="form-inputs">
+
+        <div class="input">
+            <div class="text-input-wrapper">
+                <div class="input-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                  </svg>
+                </div>
+                <input formControlName="usuario" placeholder="Usuario" />
+            </div>
+            <div class="validator">
+                <div *ngIf="loginForm.controls['usuario'].value == '' && !loginForm.controls['usuario'].touched; else usuarioWrong">
+                </div>
+                <ng-template #usuarioWrong>
+                    <svg *ngIf="loginForm.controls['usuario'].invalid; else usuarioCorrect" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ban" viewBox="0 0 16 16" class="wrong-input">
+                        <path d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0"/>
+                    </svg>
+                </ng-template>
+                <ng-template #usuarioCorrect>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16" class="correct-input">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+                    </svg>
+                </ng-template>
+            </div>
+        </div>
+
+        <div class="input">
+            <div class="text-input-wrapper">
+                <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+                        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                      </svg>
+                </div>
+                <input formControlName="password" placeholder="Senha" [type]="isVisible ? 'text' : 'password'"/>
+                <div class="change-visibility" (click)="isVisible = !isVisible">
+                    <svg *ngIf="isVisible" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+                  <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+                </svg>
+                    <svg *ngIf="!isVisible" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
+                  <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7 7 0 0 0 2.79-.588M5.21 3.088A7 7 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474z"/>
+                  <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12z"/>
+                </svg>
+                </div>
+            </div>
+            <div class="validator">
+                <div *ngIf="loginForm.controls['password'].value == '' && !loginForm.controls['password'].touched; else passwordWrong">
+                </div>
+                <ng-template #passwordWrong>
+                    <svg *ngIf="loginForm.controls['password'].invalid; else passwordCorrect" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ban" viewBox="0 0 16 16" class="wrong-input">
+                        <path d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0"/>
+                    </svg>
+                </ng-template>
+                <ng-template #passwordCorrect>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16" class="correct-input">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+                    </svg>
+                </ng-template>
+            </div>
+        </div>
+
+        <div class="auto-login">
+            <p>Logar automaticamente</p>
+            <app-toggle (toggleEmmiter)="autoLoginToggle($event)"></app-toggle>
+        </div>
+
+        <button type="submit" [disabled]="loginForm.invalid">Enviar</button>
+    </div>
+
+
+</form>

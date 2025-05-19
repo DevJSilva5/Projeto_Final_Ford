@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 2rem 0;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 420px;
+  align-items: center;
+  font-family: 'Space Mono', monospace;
+  color: #333;
+}
+
+.input {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  width: 200%;
+  justify-content: center;
+}
+
+.text-input-wrapper {
+  background-color: #fff;
+  padding: 8px 12px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  border: 1.5px solid #bbb;
+  border-radius: 8px;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  transition: border-color 0.3s ease;
+
+  &:focus-within {
+    border-color: #1e40af;
+    box-shadow: 0 0 8px rgba(30,64,175,0.4);
+  }
+
+  small {
+    display: inline-block;
+    width: max-content;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    color: transparent;
+    min-height: 1.2em;
+  }
+
+  .input-icon {
+    color: #1e40af;
+    font-size: 1.2rem;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    flex: 1;
+    font-size: 1rem;
+    color: #222;
+    padding: 6px 8px;
+
+    &::placeholder {
+      color: #999;
+      font-style: italic;
+    }
+  }
+
+  .change-visibility {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: rgba(30, 64, 175, 0.7);
+    font-size: 1.1rem;
+    user-select: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #1e40af;
+    }
+  }
+}
+
+.auto-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 420px;
+  gap: 8px;
+  font-size: 1rem;
+  color: #444;
+  margin-left: 100px;
+
+
+  p {
+    margin: 0;
+  }
+}
+
+button {
+  width: 200%;
+  max-width: 400px;
+  border: none;
+  padding: 12px 0;
+  background-color: #1e40af;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, filter 0.25s ease;
+  font-family: 'Space Mono', monospace;
+
+  &:hover {
+    background-color: #153d94;
+    filter: brightness(1.1);
+  }
+
+  &:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+  }
+}
+
+.correct-input {
+  color: darkgreen;
+  position: fixed;
+  animation-name: validatorIn;
+  animation-duration: 0.2s;
+}
+
+.wrong-input {
+  position: fixed;
+  color: darkred;
+  animation-name: validatorIn;
+  animation-duration: 0.2s;
+}
+
+@keyframes validatorIn {
+  from {
+    opacity: 0;
+    filter: blur(1rem);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}

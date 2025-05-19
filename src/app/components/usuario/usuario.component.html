@@ -1,0 +1,17 @@
+<div class="usuario-info-button" (click)="changeUsuarioToggle()">
+    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+    </svg>
+</div>
+<div class="usuario-content" [style]="usuarioContentBallon">
+    <div class="usuario">
+        <h5 class="name">{{usuarioInfo.nome}}</h5>
+        <h5 class="email">{{usuarioInfo.email}}</h5>
+    </div>
+    <div class="division"></div>
+    <div class="settings">
+        <div class="logout" (click)="logoff()">
+            <p>Logout</p>
+        </div>
+    </div>
+</div>

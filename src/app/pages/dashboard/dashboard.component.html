@@ -1,0 +1,82 @@
+<ng-template #emptyTemplate>
+    <h2 class="data">***</h2>
+</ng-template>
+
+<ng-template #emptyCell>
+    <td>***</td>
+</ng-template>
+
+<main>
+    <app-sidebar></app-sidebar>
+    <app-usuario></app-usuario>
+
+    <div class="content">
+        <div class="title">
+            <h2>Dashboard FORD</h2>
+        </div>
+        <div class="info-cards">
+            <app-card [ngStyle]="cardStyleDashboard" title="Veículo">
+                <div class="select-wrapper">
+                    <form [formGroup]="selectCarForm" method="get">
+                        <select id="car-selector" formControlName="carSelect">
+                            <option *ngFor="let vehicle of vehicles" [value]="vehicle.id">
+                                {{vehicle.vehicle}}
+                            </option>
+                        </select>
+                    </form>
+                </div>
+            </app-card>
+            <app-card [ngStyle]="cardStyleDashboard" title="Total de Vendas">
+                <div class="info">
+                    <div class="info-wrapper">
+                        <h2 class="data" id="total-vendas" *ngIf="selectedVehicle; else emptyTemplate">{{selectedVehicle.volumetotal}}</h2>
+                        <p class="ord">Unid.</p>
+                    </div>
+                </div>
+            </app-card>
+            <app-card [ngStyle]="cardStyleDashboard" title="Conectados">
+                <div class="info">
+                    <div class="info-wrapper">
+                        <h2 class="data" id="conectados" *ngIf="selectedVehicle; else emptyTemplate">{{selectedVehicle.connected}}</h2>
+                        <p class="ord">Unid.</p>
+                    </div>
+                </div>
+            </app-card>
+            <app-card [ngStyle]="cardStyleDashboard" title="Update Software">
+                <div class="info">
+                    <div class="info-wrapper">
+                        <h2 class="data" id="update-software" *ngIf="selectedVehicle; else emptyTemplate">{{selectedVehicle.softwareUpdates}}</h2>
+                        <p class="ord">Unid.</p>
+                    </div>
+                </div>
+            </app-card>
+        </div>
+        <div class="car-image">
+            <img *ngIf="selectedVehicle" [src]="selectedVehicle.img" id="car-image">
+        </div>
+        <div class="car-info">
+            <table>
+                <tr class="table-header">
+                    <td>Código - Vin</td>
+                    <td>Odômetro</td>
+                    <td>Nível de Combustível</td>
+                    <td>Status</td>
+                    <td>Lat.</td>
+                    <td>Long.</td>
+                </tr>
+                <tr>
+                    <td id="car-cod">
+                        <form class="vin-form" [formGroup]="searchCarVinForm">
+                            <input class="vin-input" type="text" formControlName="vinInput">
+                        </form>
+                    </td>
+                    <td id="odometro" *ngIf="vehicleData; else emptyCell">{{ vehicleData.odometro }}</td>
+                    <td id="combustivel" *ngIf="vehicleData; else emptyCell">{{ vehicleData.nivelCombustivel }}</td>
+                    <td id="status" *ngIf="vehicleData; else emptyCell">{{ vehicleData.status }}</td>
+                    <td id="latitude" *ngIf="vehicleData; else emptyCell">{{ vehicleData.lat }}</td>
+                    <td id="longitude" *ngIf="vehicleData; else emptyCell">{{ vehicleData.long }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</main>

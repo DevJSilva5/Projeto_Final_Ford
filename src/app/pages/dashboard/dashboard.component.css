@@ -1,0 +1,117 @@
+main{
+    overflow: hidden;
+    display: flex;
+}
+.content{
+    width: 100vw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    .title{
+        flex: 0.2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h2{
+            color: darkblue;
+
+            font-weight: 500;
+        }
+    }
+    .info-cards{
+        flex: 0.5;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+
+        .info{
+            margin: auto 0;
+            height: 70%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            padding: 7px;
+            .info-wrapper{
+                .data{
+                    margin: 0;
+                    padding: 0;
+                    color: darkblue;
+                    font-weight: 600;
+                }
+                .ord{
+                    color: darkblue;
+                }
+            }
+
+        }
+    }
+    .car-image{
+        flex: 1;
+        position: relative;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 90%;
+        }
+    }
+    .car-info{
+        flex: 0.3;
+        display: flex;
+        justify-content: center;
+        table{
+            vertical-align: middle;
+            width: 80%;
+            background-color: darkblue;
+            font-weight: 700;
+            tr{
+                color: white;
+                td{
+                    border: 1px solid black;
+                    padding: 0 10px;
+                }
+            }
+            tr:nth-child(2){
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+}
+
+.select-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form{
+        width: max-content;
+        width: 60%;
+        select{
+            margin: 0 auto;
+            width: 100%;
+            height: 30px;
+            border: solid 2px rgb(185, 185, 185);
+            border-radius: 7px;
+            padding: 0 5px;
+            outline: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.vin-form{
+    display: flex;
+
+    .vin-input{
+        width: 70%;
+        border: solid 2px rgb(185, 185, 185);
+        padding: 0 5px;
+        margin: 0 auto;
+        border-radius: 7px;
+    }
+}

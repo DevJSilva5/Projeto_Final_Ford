@@ -1,0 +1,13 @@
+img{
+    usuario-select: none;
+    -moz-usuario-select: none;
+    -webkit-usuario-drag: none;
+}
+
+input{
+    outline: none;
+}
+
+html, body{
+    height: 100%;
+}

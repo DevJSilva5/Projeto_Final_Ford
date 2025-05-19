@@ -1,0 +1,83 @@
+.usuario-info-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    top: 20px;
+    right: 15px;
+    cursor: pointer;
+    transition: all .1s;
+    svg{
+        transition: all .2s;
+
+    }
+    &:hover{
+        scale: 1.1;
+        svg{
+            font-weight: bold;
+        }
+    }
+    &:active{
+        scale: .9;
+    }
+}
+
+.usuario-content{
+    background-color: white;
+    border-radius: 7px;
+    width: 150px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    padding: 5px;
+    position: fixed;
+    right: 100px;
+    transition: all .2s;
+    .usuario{
+        text-align: center;
+        h5{
+            margin: 0;
+        }
+        .name{
+            color: darkblue;
+        }
+        .email{
+            font-size: smaller;
+            color: lightgray;
+            max-width: 100%;
+            overflow-y: auto;
+        }
+    }
+    .division{
+        background-color: rgba(0, 0, 0, 0.4);
+        height: 1px;
+        width: 100%;
+        margin: 5px 0 5px 0;
+    }
+    .settings{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .logout{
+            color: darkred;
+            font-weight: 600;
+            padding: 5px;
+            border-radius: 5px;
+            height: 1.8rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .1s;
+
+            cursor: pointer;
+            &:hover{
+                scale: 1.05;
+            }
+            p{
+                margin: 0;
+            }
+        }
+    }
+}
